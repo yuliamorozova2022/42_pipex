@@ -1,19 +1,12 @@
 NAME	= pipex
 
-SRC_FILE 	=	main.c utils1.c utils2.c utils3.c pipex.c
+SRC_FILE 	=	main.c utils1.c utils2.c utils3.c pipex.c here_doc.c
 
-SRC_BONUS	=	main_bonus.c utils1_bonus.c utils2_bonus.c utils3_bonus.c \
-			pipex_bonus.c here_doc_bonus.c \
-			
 HDR		=	inc/pipex.h
-
-HDR_BONUS	=	inc/pipex_bonus.h
 
 LIB		=	libft/libft.a
 
 SRCS		=	${addprefix src/, ${SRC_FILE}}
-
-SRCS_BONUS 	=	${addprefix src_bonus/, ${SRC_BONUS}}
 
 CFLAGS		=	-Wall -Wextra -Werror -fsanitize=address -g
 
@@ -36,10 +29,6 @@ $(NAME): $(LIB) $(SRC)
 $(LIB):
 	@ make -C ./libft --no-print-directory --silent
 	@ echo "${Green}libft${White}compiled"
-
-bonus:$(LIB) $(SRCS_BONUS)
-	@ cc $(CFLAGS) $(SRCS_BONUS) $(LIB) -o $(NAME)
-	@ echo "${Green}pipex bonus${White}is ready"
 
 clean:
 	@ make clean -C ./libft --no-print-directory --silent
