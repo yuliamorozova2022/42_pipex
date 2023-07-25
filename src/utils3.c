@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymorozov <ymorozov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/30 15:53:23 by ymorozov          #+#    #+#             */
-/*   Updated: 2023/03/30 15:55:36 by ymorozov         ###   ########.fr       */
+/*   Created: 2023/07/21 11:58:12 by ymorozov          #+#    #+#             */
+/*   Updated: 2023/07/21 16:03:13 by ymorozov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,30 @@
 
 void	free_struct(t_cmd *cmd)
 {
+	if (cmd == NULL)
+		return ;
 	ft_free(cmd->cmd, size_of_arr(cmd->cmd));
 	if (cmd->path != NULL)
 		free(cmd->path);
 }
 
-t_cmd	*get_struct(char *command, char **envp)
+int	get_struct(char *command, char **envp, t_cmd *new)
 {
-	t_cmd	*new;
-
-	new = (t_cmd *)malloc(sizeof(t_cmd));
-	if (new == NULL)
-		return (NULL);
 	new->cmd = NULL;
 	new->path = NULL;
 	new->cmd = ft_split(command, ' ');
 	if (new->cmd == NULL)
-		return (free(new), NULL);
+		return (1);
 	new->path = get_path(new->cmd[0], envp);
 	if (new->path == NULL)
 	{
+		// ft_putstr_fd("in get_struct before free_struct\n", 2);	//DELETE
 		free_struct(new);
-		free(new);
-		return (NULL);
+		// ft_putstr_fd("in get_struct after free_struct\n", 2);	//DELETE
+		// free(new);
+		return (2);
 	}
-	return (new);
+	return (0);
 }
 
 void	close_all(int fd1, int fd2)

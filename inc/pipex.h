@@ -6,7 +6,7 @@
 /*   By: ymorozov <ymorozov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:09:58 by ymorozov          #+#    #+#             */
-/*   Updated: 2023/04/04 10:26:39 by ymorozov         ###   ########.fr       */
+/*   Updated: 2023/07/21 15:52:27 by ymorozov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,23 @@ typedef struct s_cmd
 	char	*path;
 }				t_cmd;
 
+//hint	here_doc.c
+void	here_doc(int *fd, char **av);
+
 //pipex.c
 int		pipex_manager(int *arr_oper, char **argv, char **envp, int *fd);
 int		pipex(int *fd, t_cmd *cmd, char **envp);
+int	pipex_skip(int *fd);
 
 //utils1.c
 char	*get_path(char *command, char **envp);
 int		size_of_arr(char **array);
 char	*find_path(char *cmd, char **array);
 void	ft_free(char **array, size_t n);
-
 //utils2.c
 char	**ft_split_path(char const *s, char c);
-
 //utils3.c
-t_cmd	*get_struct(char *command, char **envp);
+int	get_struct(char *command, char **envp, t_cmd *new);
 void	free_struct(t_cmd *cmd);
 void	close_all(int fd1, int fd2);
 

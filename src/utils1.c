@@ -6,7 +6,7 @@
 /*   By: ymorozov <ymorozov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:09:28 by ymorozov          #+#    #+#             */
-/*   Updated: 2023/03/30 15:07:22 by ymorozov         ###   ########.fr       */
+/*   Updated: 2023/07/21 16:03:04 by ymorozov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ char	*get_path(char *command, char **envp)
 		}
 	}
 	tmp = find_path(command, str_arr);
+	// ft_putstr_fd("in get_path after find_path\n", 2);	//DELETE
 	ft_free(str_arr, size_of_arr(str_arr));
+	// ft_putstr_fd("in get_path after ft_free\n", 2);	//DELETE
 	return (tmp);
 }
 
@@ -46,6 +48,8 @@ int	size_of_arr(char **array)
 
 	i = 0;
 	counter = 0;
+	if (array == NULL)
+		return (counter);
 	while (array[i] != NULL)
 	{
 		counter++;
