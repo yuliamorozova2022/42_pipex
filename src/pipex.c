@@ -6,7 +6,7 @@
 /*   By: ymorozov <ymorozov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 12:20:49 by ymorozov          #+#    #+#             */
-/*   Updated: 2023/07/26 11:06:11 by ymorozov         ###   ########.fr       */
+/*   Updated: 2023/07/26 11:23:45 by ymorozov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int	pipex_manager(t_struct *st, char **argv, char **envp)
 			free_struct(st->cur);
 		}
 	}
+	if (res == 2)
+		return (close(st->fd_read), 1);
 	ft_read_from_pipe(st->fd_read, st->fds[1]);
 	if (wait_all(st->first, st->last) == 1)
 		return (close(st->fd_read), 1);

@@ -6,7 +6,7 @@
 /*   By: ymorozov <ymorozov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 10:23:03 by ymorozov          #+#    #+#             */
-/*   Updated: 2023/07/26 11:05:46 by ymorozov         ###   ########.fr       */
+/*   Updated: 2023/07/26 11:23:38 by ymorozov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int ac, char **av, char **envp)
 		here_doc(start.fds, av);
 	start.last = ac - 1;
 	if (pipex_manager(&start, av, envp) == 1)
-		return (free(start.cur), close_all(start.fds[0], start.fds[1]), 1);
+		return (free(start.cur), close_all(start.fds[0], start.fds[1]), 127);
 	return (free(start.cur), close_all(start.fds[0], start.fds[1]), 0);
 }
 
