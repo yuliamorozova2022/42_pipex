@@ -6,7 +6,7 @@
 /*   By: ymorozov <ymorozov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 10:23:03 by ymorozov          #+#    #+#             */
-/*   Updated: 2023/07/26 10:45:25 by ymorozov         ###   ########.fr       */
+/*   Updated: 2023/07/26 11:05:46 by ymorozov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ static int	ft_open(t_struct *start, char **av, int ac);
 
 int	main(int ac, char **av, char **envp)
 {
-	// int	fds[2];
-	// int	i;
 	t_struct	start;
 
 	if (ac < 5)

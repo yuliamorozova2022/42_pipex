@@ -6,7 +6,7 @@
 /*   By: ymorozov <ymorozov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:09:58 by ymorozov          #+#    #+#             */
-/*   Updated: 2023/07/25 20:05:15 by ymorozov         ###   ########.fr       */
+/*   Updated: 2023/07/26 11:05:06 by ymorozov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,11 @@ char	*get_path(char *command, char **envp);
 int		size_of_arr(char **array);
 char	*find_path(char *cmd, char **array);
 void	ft_free(char **array, size_t n);
+
 //utils2.c
 char	**ft_split_path(char const *s, char c);
 //utils3.c
-int	get_struct(char *command, char **envp, t_cmd *new);
+int		get_struct(char *command, char **envp, t_cmd *new);
 void	free_struct(t_cmd *cmd);
 void	close_all(int fd1, int fd2);
 

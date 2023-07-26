@@ -6,7 +6,7 @@
 /*   By: ymorozov <ymorozov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 12:20:49 by ymorozov          #+#    #+#             */
-/*   Updated: 2023/07/26 10:47:48 by ymorozov         ###   ########.fr       */
+/*   Updated: 2023/07/26 11:06:11 by ymorozov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,10 @@ int	pipex_manager(t_struct *st, char **argv, char **envp)
 		else
 		{
 			if (pipex(&st->fd_read, st->cur, envp) == 1)
-				return (free_struct(st->cur),1);
+				return (free_struct(st->cur), 1);
 			free_struct(st->cur);
 		}
 	}
-	// if (res == 2)
-	// 	return (close(st->fd_read), 0);
 	ft_read_from_pipe(st->fd_read, st->fds[1]);
 	if (wait_all(st->first, st->last) == 1)
 		return (close(st->fd_read), 1);
