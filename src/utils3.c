@@ -6,7 +6,7 @@
 /*   By: ymorozov <ymorozov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 11:58:12 by ymorozov          #+#    #+#             */
-/*   Updated: 2023/07/21 16:03:13 by ymorozov         ###   ########.fr       */
+/*   Updated: 2023/07/25 16:46:11 by ymorozov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ int	get_struct(char *command, char **envp, t_cmd *new)
 	new->path = get_path(new->cmd[0], envp);
 	if (new->path == NULL)
 	{
-		// ft_putstr_fd("in get_struct before free_struct\n", 2);	//DELETE
 		free_struct(new);
-		// ft_putstr_fd("in get_struct after free_struct\n", 2);	//DELETE
-		// free(new);
 		return (2);
 	}
 	return (0);
