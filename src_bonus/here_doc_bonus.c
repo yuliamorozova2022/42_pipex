@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   here_doc.c                                         :+:      :+:    :+:   */
+/*   here_doc_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymorozov <ymorozov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 10:22:53 by ymorozov          #+#    #+#             */
-/*   Updated: 2023/07/21 11:57:17 by ymorozov         ###   ########.fr       */
+/*   Updated: 2023/04/04 10:24:01 by ymorozov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../inc/pipex.h"
+#include "./../inc/pipex_bonus.h"
 
 static int	read_from_input(int *pipefd, char *stop);
 

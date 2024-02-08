@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils2.c                                           :+:      :+:    :+:   */
+/*   utils2_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymorozov <ymorozov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 12:08:04 by ymorozov          #+#    #+#             */
-/*   Updated: 2023/03/30 15:06:12 by ymorozov         ###   ########.fr       */
+/*   Updated: 2023/04/04 10:23:38 by ymorozov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../inc/pipex.h"
+#include "./../inc/pipex_bonus.h"
 
 static int		ft_string_count(const char *str, char c);
 static size_t	ft_symb_in_str(const char *str, char c);

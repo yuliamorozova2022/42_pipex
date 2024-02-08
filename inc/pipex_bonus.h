@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   pipex_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymorozov <ymorozov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:09:58 by ymorozov          #+#    #+#             */
-/*   Updated: 2023/04/04 10:26:39 by ymorozov         ###   ########.fr       */
+/*   Updated: 2023/04/04 10:26:18 by ymorozov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#ifndef PIPEX_BONUS_H
+# define PIPEX_BONUS_H
 
 # include <unistd.h>
 # include <stdio.h>
@@ -31,6 +31,9 @@ typedef struct s_cmd
 	char	*path;
 }				t_cmd;
 
+//hint	here_doc.c
+void	here_doc(int *fd, char **av);
+
 //pipex.c
 int		pipex_manager(int *arr_oper, char **argv, char **envp, int *fd);
 int		pipex(int *fd, t_cmd *cmd, char **envp);
@@ -40,10 +43,8 @@ char	*get_path(char *command, char **envp);
 int		size_of_arr(char **array);
 char	*find_path(char *cmd, char **array);
 void	ft_free(char **array, size_t n);
-
 //utils2.c
 char	**ft_split_path(char const *s, char c);
-
 //utils3.c
 t_cmd	*get_struct(char *command, char **envp);
 void	free_struct(t_cmd *cmd);

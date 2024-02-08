@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   pipex_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymorozov <ymorozov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 12:20:49 by ymorozov          #+#    #+#             */
-/*   Updated: 2023/04/04 10:27:27 by ymorozov         ###   ########.fr       */
+/*   Updated: 2024/02/08 19:09:58 by ymorozov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../inc/pipex.h"
+#include "./../inc/pipex_bonus.h"
 
 static int	wait_all(int start, int end);
 static int	ft_read_from_pipe(int fd_in, int fd_out);
